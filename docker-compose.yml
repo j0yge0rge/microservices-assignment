@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  serviceb:
+    build: ./serviceb/serviceb
+    ports:
+      - "8081:8081"
+
+  servicea:
+    build: ./servicea/servicea
+    ports:
+      - "8080:8080"
+    depends_on:
+      - serviceb
